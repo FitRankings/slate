@@ -1,6 +1,6 @@
-# Activities
+# Groups
 
-## Get All Activities
+## Get All Groups
 
 
 ```shell

@@ -1,6 +1,6 @@
-# Activities
+# Users
 
-## Get All Activities
+## Get All Users
 
 
 ```shell
