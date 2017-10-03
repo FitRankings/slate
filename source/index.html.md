@@ -24,7 +24,7 @@ FitRankings provides a simple and powerful REST API to authenticate, integrate a
 This API reference provides information on available endpoints and how to interact with the FitRankings API.
 
 <aside class="success">
-<strong>IMPORTANT</strong> - There are two ways of interacting with the FitRankings API. The first is the Standard OAuth Flow, the other is a Custom OAuth Flow. The custom flow is used to provide streamlined turn-key integration through an embeddable. The standard flow requires more setup but offers more flexibility. For more information on each method and which is right for you, contact <a href="mailto:support@fitrankings.com">support@fitrankings.com</a>.
+<strong>IMPORTANT</strong> - There are two ways of interacting with the FitRankings API. The first is the Standard OAuth Flow, the other is a Custom OAuth Flow. The custom flow is used to provide streamlined turn-key integration through an embeddable. The standard flow requires more setup but offers more flexibility. These documents outline the specifications for the standard API. For more information on each method and which is right for you, contact <a href="mailto:support@fitrankings.com">support@fitrankings.com</a>.
 </aside>
 
 # Authentication
@@ -44,10 +44,10 @@ curl -X "POST" "https://api.fitrankings.com/iq/tokens/master-token/" \
 {"token": "MASTER_TOKEN"}
 ```
 
-To obtain a client application’s master token, one must send a request as indicated, with the client credentials provided to you included in the request body. Thereafter this token must be stored and used with subsequent requests for application-level resources. As a rule of thumb, requests containing this token in the authorization header will grant access to the resources of all users who’ve authorized the client application. To restrict a request to the resources of a specific user, simply provide that user’s unique access token in place of the master token in the authorization header.
+To obtain a client application’s master token, one must send a request as indicated, with the client credentials provided to you included in the request body. Thereafter this token must be stored and used with subsequent requests for application-level resources.
 
 <aside class="notice">
-Save this token and keep in a safe place!
+<strong>REMEMBER</strong> - As a rule of thumb, requests containing this token in the authorization header will grant access to the resources of all users who’ve authorized the client application. To restrict a request to the resources of a specific user, simply provide that user’s unique access token in place of the master token in the authorization header. For example, to access all activities for all users, use the master token. On the other hand, to access all activities for one user, use that user's specific access token.
 </aside>
 
 ## User Authentication

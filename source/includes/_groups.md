@@ -34,10 +34,10 @@ Retrieve aggregate stats for a group’s members.
 
 Parameter | Default | Format
 --------- | ------- | -----------
-time_mode | null | 1 = Year, 3 = Month, 4 = Week, 5 = Day
-time_value | null | YYYY, YYYY-MM, YYYY-WWW, YYYY-MM-DD
-start | null | YYYY-MM-DD HH:MM:SS
-end | null | YYYY-MM-DD HH:MM:SS
+time_mode | 0 (all-time) | The period to aggregate stats for. 1 = Year, 3 = Month, 4 = Week, 5 = Day. Optional.
+time_value | NA | The time period to use in conjunction with the time_mode. YYYY, YYYY-MM, YYYY-WWW, YYYY-MM-DD. Optional.
+start | NA | YYYY-MM-DD HH:MM:SS
+end | NA | YYYY-MM-DD HH:MM:SS
 
 <aside class="notice">
   Use either time_mode and time_value or start and end, in conjunction. If no parameters are provided, data will default to all-time stats. 

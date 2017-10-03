@@ -5,7 +5,7 @@
 
 ```shell
 curl "https://api.fitrankings.com/iq/users/"
-  -H "Authorization: Bearer YOUR_TOKEN"
+  -H "Authorization: Bearer USER_OR_MASTER_TOKEN"
 ```
 
 > The above command returns JSON structured like this:
@@ -38,7 +38,7 @@ page_size | 20 | The amount of results to include per page. Optional.
 
 ```shell
 curl "https://api.fitrankings.com/iq/users/stat-summary/"
-  -H "Authorization: Bearer YOUR_TOKEN"
+  -H "Authorization: Bearer USER_OR_MASTER_TOKEN"
 ```
 
 > The above command returns JSON structured like this:
