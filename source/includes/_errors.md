@@ -4,7 +4,7 @@ The FitRankings API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request has an error.
+400 | Bad Request -- Your request has an error. Check parameters and formatting.
 401 | Unauthorized -- Your API key is invalid.
 403 | Forbidden -- Your API key does not have appropriate permissions.
 404 | Not Found -- The specified resource could not be found.

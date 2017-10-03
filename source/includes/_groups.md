@@ -4,137 +4,41 @@
 
 
 ```shell
-curl "https://api.fitrankings.com/iq/activities/"
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-      "id": 685612,
-      "title": null,
-      "description": null,
-      "met_minutes": "23.0000",
-      "distance": "16009.3440", //meters**
-      "duration": "600.0000", //seconds**
-      "steps": 111,
-      "calories": "22.0000",
-      "provider_image_url": null,
-      "provider_key": "fitbit",
-      "provider_activity_id": "8222125504",
-      "activity_type": "1",
-      "fitness_type": "2",
-      "action_date": "2017-06-13T12:00:00Z",
-      "is_locked": false,
-      "is_edited": false,
-      "is_manual_entry": false,
-      "is_deleted": false,
-      "created_at": "2017-06-23T17:14:28.840028Z",
-      "updated_at": "2017-06-23T17:14:28.840053Z",
-      "user": {
-        "id": 30171,
-        "email": "john@gmail.com",
-        "first_name": "John",
-        "last_name": "Smith",
-        "date_joined": "2017-06-23T17:14:10.995721Z",
-        "handle": null,
-        "profile": {
-          "id": 10494,
-          "display_name": "J. Smith",
-          "display_name_format": "0",
-          "image_profile_url": null,
-          "is_private": false,
-          "follower_count": 0,
-          "following_count": 0,
-          "bio": null
-        }
-      },
-      "current_user_reacted_with_type": -1,
-      "like_count": 0,
-      "comment_count": 0,
-      "comments": []
-    }, ...]
-```
-
-Retrieve a list of all activities related to a user or client (ordered by date).
-
-### HTTP Request
-
-`GET https://api.fitrankings.com/iq/activities/`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-page | 1 | If set to true, the result will also include cats. Optional.
-page_size | 20 | If set to false, the result will include kittens that have already been adopted. Optional.
-
-## Get a Specific Activity
-
-```shell
-curl "https://api.fitrankings.com/iq/activities/<ID>"
-  -H "Authorization: Bearer YOUR_TOKEN"
+curl "https://api.fitrankings.com/iq/groups/stat-summary/"
+  -H "Authorization: Bearer MASTER_TOKEN"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 685775,
-  "title": null,
-  "description": null,
-  "met_minutes": "182.0000",
-  "distance": "0.0000", //meters**
-  "duration": "5460.0000", //seconds**
-  "steps": 3347,
-  "calories": "0.0000",
-  "provider_image_url": null,
-  "provider_key": "google-oauth2",
-  "provider_activity_id": "1502064788614000000",
-  "activity_type": "1",
-  "fitness_type": "1",
-  "action_date": "2017-08-07T00:00:00Z",
-  "is_locked": false,
-  "is_edited": false,
-  "is_manual_entry": false,
-  "is_deleted": false,
-  "created_at": "2017-08-08T17:08:24.310110Z",
-  "updated_at": "2017-08-08T17:08:24.310137Z",
-  "user": {
-    "id": 30264,
-    "email": "bob@aol.com",
-    "first_name": "Bob",
-    "last_name": "Smith",
-    "date_joined": "2017-06-21T17:52:32.795423Z",
-    "handle": null,
-    "profile": {
-      "id": 10493,
-      "display_name": "Bob",
-      "display_name_format": "1",
-      "image_profile_url": "https://d2qqvi7evhy56u.cloudfront.net/c19757295d946c50e1117f2b34a1481373516c4a.png",
-      "is_private": false,
-      "follower_count": 0,
-      "following_count": 0,
-      "bio": null
-    }
-  },
-  "current_user_reacted_with_type": -1,
-  "like_count": 0,
-  "comment_count": 0,
-  "comments": []
+  "group_id": 619,
+  "avg_user_met_minutes": 11092.975341666666,
+  "calories": 133191.6932,
+  "activities": 188,
+  "duration": 1129205.0, //seconds**
+  "user_count": 12,
+  "distance": 1205322.8494, //meters**
+  "met_minutes": 133115.7041,
+  "steps": 1155501
 }
-
 ```
 
-This endpoint retrieves a specific activity by id.
+Retrieve aggregate stats for a group’s members.
 
 ### HTTP Request
 
-`GET https://api.fitrankings.com/iq/activities/<ID>`
+`GET https://api.fitrankings.com/iq/groups/stat-summary/`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the activity to retrieve
+Parameter | Default | Format
+--------- | ------- | -----------
+time_mode | null | 1 = Year, 3 = Month, 4 = Week, 5 = Day
+time_value | null | YYYY, YYYY-MM, YYYY-WWW, YYYY-MM-DD
+start | null | YYYY-MM-DD HH:MM:SS
+end | null | YYYY-MM-DD HH:MM:SS
+
+<aside class="notice">
+  Use either time_mode and time_value or start and end, in conjunction. If no parameters are provided, data will default to all-time stats. 
+</aside>

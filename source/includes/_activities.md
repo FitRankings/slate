@@ -67,8 +67,8 @@ Retrieve a list of all activities related to a user or client (ordered by date).
 
 Parameter | Default | Description
 --------- | ------- | -----------
-page | 1 | If set to true, the result will also include cats. Optional.
-page_size | 20 | If set to false, the result will include kittens that have already been adopted. Optional.
+page | 1 | The page to jump to. Optional.
+page_size | 20 | The amount of results to include per page. Optional.
 
 ## Get a Specific Activity
 
@@ -137,4 +137,4 @@ This endpoint retrieves a specific activity by id.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the activity to retrieve
+ID | The ID of the activity to retrieve.
