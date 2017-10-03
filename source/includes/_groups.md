@@ -1,10 +1,10 @@
 # Groups
 
-## Get All Groups
+## Get A Group's Stat Summary
 
 
 ```shell
-curl "https://api.fitrankings.com/iq/groups/stat-summary/"
+curl "https://api.fitrankings.com/iq/groups/stat-summary/" \
   -H "Authorization: Bearer MASTER_TOKEN"
 ```
 
@@ -30,7 +30,7 @@ Retrieve aggregate stats for a group’s members.
 
 `GET https://api.fitrankings.com/iq/groups/stat-summary/`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Default | Format
 --------- | ------- | -----------

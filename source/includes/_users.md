@@ -4,7 +4,7 @@
 
 
 ```shell
-curl "https://api.fitrankings.com/iq/users/"
+curl "https://api.fitrankings.com/iq/users/" \
   -H "Authorization: Bearer USER_OR_MASTER_TOKEN"
 ```
 
@@ -27,7 +27,7 @@ Retrieve a list of all activities related to a user or client (ordered by date).
 
 `GET https://api.fitrankings.com/iq/users/`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -37,7 +37,7 @@ page_size | 20 | The amount of results to include per page. Optional.
 ## Get a User's Stat Summary
 
 ```shell
-curl "https://api.fitrankings.com/iq/users/stat-summary/"
+curl "https://api.fitrankings.com/iq/users/stat-summary/" \
   -H "Authorization: Bearer USER_OR_MASTER_TOKEN"
 ```
 

@@ -35,7 +35,11 @@ To access to the FitRankings OAuth2 API, contact <a href="mailto:support@fitrank
 
 ```shell
 curl -X "POST" "https://api.fitrankings.com/iq/tokens/master-token/" \
-     -d $'{ "client_id": "...", "client_secret": "..." }'
+     -H "Content-Type: application/json; charset=utf-8" \
+     -d $'{
+  "client_id": "...",
+  "client_secret": "..."
+}'
 ```
 
 > The above command returns JSON structured like this:
@@ -53,20 +57,20 @@ To obtain a client application’s master token, one must send a request as indi
 ## User Authentication
 
 ```shell
-curl "https://api.fitrankings.com/iq/oauth2/?client_id=...&callback_uri=https:%2F%2Fwww.example.com%2F"
+open "https://api.fitrankings.com/iq/oauth2/?client_id=...&callback_uri=https:%2F%2Fwww.example.com%2F"
 ```
-> Once authorized, the user will be redirected to the callback, such as:
+> Once authorized, the user will be redirected to the callback uri, such as:
 
 ```
-https://www.example.com/?user_id=000000&token=USER_TOKEN
+https://www.example.com/?token=USER_TOKEN&user_id=000000
 ``` 
 > Save the credentials from the query string for subsequent requests.
 
-In order to access resources (activities, users, etc.), an application must be granted permission by the resource owner. To do so, the client application must direct the owner to our authorization endpoint. We recommend doing so in a 400x600 popup (see example). See below for necessary query parameters to include in your request. Once the owner has authorized the client application, (s)he will be given the opportunity to connect with a selection of 3rd party fitness devices. After doing so, (s)he will be returned to the callback_uri provided by the client. If the owner has successfully authorized the client, the callback_uri will contain a unique identifier and access token for the client to use in subsequent requests for the owner’s resources.
+In order to access resources (activities, users, etc.), an application must be granted permission by the resource owner. To do so, the client application must direct the owner to our authorization endpoint. We recommend doing so in a 400x600 popup (see example). See below for the necessary query parameters to include in your request. Once the owner has authorized the client application, (s)he will be given the opportunity to connect with a selection of 3rd party fitness devices. After doing so, (s)he will be returned to the callback_uri provided by the client. If the owner has successfully authorized the client, the callback_uri will contain a unique identifier and access token for the client application to use in subsequent requests for the owner’s resources.
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------
-client_id | This client_id provided to you.
-callback_uri | If one isn't provided, the last one to registered will be reused.
+client_id | The client_id provided to you.
+callback_uri | If one isn't provided, the last one used will be reused.
