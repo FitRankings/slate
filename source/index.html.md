@@ -2,7 +2,7 @@
 title: FitRankings API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - curl
+  - shell
 
 toc_footers:
   - <a href='mailto:support@fitrankings.com'>Request a Developer Key</a>
