@@ -6,7 +6,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://www.fitrankings.com/'>FitRankings Home</a>
-  - <a href='mailto:support@fitrankings.com'>Request a Developer Key</a>
+  - <a href='https://www.fitrankings.com/'>FitRankings Developer Home</a>
+  - <a href='mailto:support@fitrankings.com'>Request an API Key</a>
 
 includes:
   - activities
